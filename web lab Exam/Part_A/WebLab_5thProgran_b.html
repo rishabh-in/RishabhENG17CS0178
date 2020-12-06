@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml/">
+<head>
+    <style>
+        table,th, td {
+                border: 2px solid black;
+                border-collapse: collapse;
+                margin:auto;
+                padding: 3px;
+                font-size: 20px;
+        }
+    </style>
+    <title>Modified Part A</title>
+</head>
+<body bgcolor="yellow">
+<h3 style="text-align:center;color:red"> Program to generate square of each Fibonacci generated </h3>
+<table id="myTable"></table>
+<script type="text/javascript">
+    var limit = prompt("Enter the number");
+    var f1=0;
+    var f2=1;
+    var table = document.getElementById("myTable");
+    if(limit == 1)
+    {
+        var head = table.insertRow(0);
+        head.insertCell(-1).innerHTML = "Number";
+        head.insertCell(-1).innerHTML = "Square";
+        var holder = table.insertRow(-1);
+        holder.insertCell(-1).innerHTML = f1;
+        holder.insertCell(-1).innerHTML = (f1*f1);
+    }
+    if(limit == 2)
+    {
+        var head = table.insertRow(0);
+        head.insertCell(-1).innerHTML = "Number";
+        head.insertCell(-1).innerHTML = "Square";
+        var holder = table.insertRow(-1);
+        holder.insertCell(-1).innerHTML = f1;
+        holder.insertCell(-1).innerHTML = (f1*f1);
+        var holder = table.insertRow(-1);
+        holder.insertCell(-1).innerHTML = f2;
+        holder.insertCell(-1).innerHTML = (f2*f2);
+        
+    }
+    if(limit > 2)
+    {
+        var head = table.insertRow(0);
+        head.insertCell(-1).innerHTML = "Number";
+        head.insertCell(-1).innerHTML = "Square";
+        for (var i = 1; i < limit; i++){
+            f3 = f2+f1;
+            f1=f2;
+            f2=f3;
+            var holder = table.insertRow(-1);
+            holder.insertCell(-1).innerHTML = f3;
+            holder.insertCell(-1).innerHTML = (f3*f3);
+        }
+    }
+</script>
+</body>
+</html>
